@@ -36,7 +36,7 @@ export const ManagePublishedBlogCard = ({ blog }) => {
 
                 <div className="flex flex-col justify-between py-2 w-full min-w-[300px]">
                     <div>
-                        <Link to={`/blog/${blog_id}`} className="blog-title mb-4 hover:underline">{title}</Link>
+                        <Link to={`/article/${blog_id}`} className="blog-title mb-4 hover:underline">{title}</Link>
 
                         <p className="line-clamp-1">Published on {getDay(publishedAt)}</p>
                     </div>
