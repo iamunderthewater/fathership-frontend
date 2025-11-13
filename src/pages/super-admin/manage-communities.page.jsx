@@ -134,7 +134,7 @@ const ManageCommunities = () => {
                 <hr className="w-full my-2 max-md:hidden border-grey" />
                 <p>You can search and delete any community from this page as admin.</p>
 
-                <div className=" flex gap-4 items-center max-md:mt-5 md:mt-8 mb-10 border-b border-grey pb-10 sticky top-[150px] bg-white">
+                <div className=" flex gap-4 items-center max-md:pt-5 md:pt-8 mb-10 border-b border-grey pb-10 sticky top-[100px] bg-white">
                     <input 
                         type="search"
                         className="w-[35%] bg-grey p-4 pl-6 pr-6 rounded-full placeholder:text-dark-grey"

@@ -48,8 +48,6 @@ const CategoriesManagement = () => {
 
     }
 
-    useEffect(() => { console.log(categories?.results) }, [categories])
-
     useEffect(() => {
     
             if(access_token){
@@ -108,7 +106,7 @@ const CategoriesManagement = () => {
 
             {/* <Toaster /> */}
 
-            <div className=" flex gap-4 items-center max-md:mt-5 md:mt-8 mb-10 border-b border-grey pb-10 sticky top-[150px] bg-white">
+            <div className=" flex gap-4 items-center max-md:pt-5 md:pt-8 mb-10 border-b border-grey pb-10 sticky top-[100px] bg-white">
                 <input 
                     type="search"
                     className="w-[50%] bg-grey p-4 pl-6 pr-6 rounded-full placeholder:text-dark-grey"
