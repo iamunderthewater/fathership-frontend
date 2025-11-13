@@ -61,8 +61,42 @@ const SideNav = () => {
                     {/* large screen links */}
                     <div className={"min-w-[200px] h-[calc(100vh-80px-60px)] md:h-cover md:sticky top-24 overflow-y-auto p-6 md:pr-0 md:border-grey md:border-r absolute max-md:top-[64px] bg-white max-md:w-[calc(100%+80px)] max-md:px-16 max-md:-ml-7 duration-500 " + (!showSideNav ? "max-md:opacity-0 max-md:pointer-events-none" : "opacity-100 pointer-events-auto")}>
 
+                        {
+                            super_admin &&
+                            <div className="mb-8 -mt-8">
+                                <h4 className="text-lg uppercase break-words text-dark-grey mt-8 mb-3">Admin</h4>
+                                <hr className="border-grey -ml-6 max-md:mb-2 mb-8 mr-6" />
+                                
+                                <NavLink to="/dashboard/super-admin/metrics" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
+                                    <i className="fi fi-rr-chart-pie-alt mt-1"></i>
+                                    Metrics
+                                </NavLink>
+
+                                <NavLink to="/dashboard/super-admin/activities" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
+                                    <i className="fi fi-rr-pencil mt-1"></i>
+                                    Activities
+                                </NavLink>
+
+                                <NavLink to="/dashboard/super-admin/communities" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
+                                    <i className="fi fi-rr-users-alt mt-1"></i>
+                                    Communities
+                                </NavLink>
+
+                                <NavLink to="/dashboard/super-admin/reports" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
+                                    <i className="fi fi-rr-circle-x mt-1"></i>
+                                    Reports
+                                </NavLink>
+
+                                <NavLink to="/dashboard/super-admin/categories" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
+                                    <i className="fi fi-rr-book mt-1"></i>
+                                    Categories
+                                </NavLink>
+
+                            </div>
+                        }
+
                         <h4 className="text-xl text-dark-grey mb-3">Dashboard</h4>
-                        <hr className="border-grey -ml-6 max-md:mb-2 mb-8 mr-6" />
+                        <hr className="border-grey -ml-6 max-md:mb-2 mb-4 mr-6" />
 
                         <NavLink to="/dashboard/articles" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
                             <i className="fi fi-rr-document"></i>
@@ -85,38 +119,8 @@ const SideNav = () => {
                             Write
                         </NavLink>
 
-                        {
-                            super_admin &&
-                            <div>
-                                <h4 className="text-lg uppercase break-words text-dark-grey mt-8 mb-3">Super Admin</h4>
-                                <hr className="border-grey -ml-6 max-md:mb-2 mb-8 mr-6" />
-                                
-
-                                <NavLink to="/dashboard/super-admin/categories" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
-                                    <i className="fi fi-rr-book mt-1"></i>
-                                    Categories
-                                </NavLink>
-
-                                <NavLink to="/dashboard/super-admin/activities" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
-                                    <i className="fi fi-rr-pencil mt-1"></i>
-                                    Activities
-                                </NavLink>
-
-                                <NavLink to="/dashboard/super-admin/reports" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
-                                    <i className="fi fi-rr-circle-x mt-1"></i>
-                                    Reports
-                                </NavLink>
-
-                                <NavLink to="/dashboard/super-admin/metrics" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
-                                    <i className="fi fi-rr-chart-pie-alt mt-1"></i>
-                                    Metrics
-                                </NavLink>
-
-                            </div>
-                        }
-
-                        <h4 className="text-lg text-dark-grey uppercase max-md:mt-8 mt-20 mb-3">Settings</h4>
-                        <hr className="border-grey -ml-6 max-md:mb-2 mb-8 mr-6" />
+                        <h4 className="text-lg text-dark-grey uppercase max-md:mt-8 mt-8 mb-3">Settings</h4>
+                        <hr className="border-grey -ml-6 max-md:mb-2 mb-4 mr-6" />
 
                         <NavLink to="/settings/edit-profile" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
                             <i className="fi fi-rr-user"></i>

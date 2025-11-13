@@ -24,6 +24,7 @@ import CreateCommunityForm from "./pages/create-community.page";
 import CommunityPage from "./pages/communityPage.page";
 import ProtectedRoute from "./components/protectedRoute.component";
 import WebsiteMetrics from "./pages/super-admin/metrics.page";
+import ManageCommunities from "./pages/super-admin/manage-communities.page";
 
 export const UserContext = createContext({})
 
@@ -105,6 +106,7 @@ const App = () => {
                             <Route path="activities" element={<ActivitiesLog />} />
                             <Route path="reports" element={<ManageReports />} />
                             <Route path="metrics" element={<WebsiteMetrics />} />
+                            <Route path="communities" element={<ManageCommunities />} />
                         </Route>
                     </Route>
                     <Route path="settings" element={<SideNav />}>

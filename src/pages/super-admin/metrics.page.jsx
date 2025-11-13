@@ -56,8 +56,8 @@ const WebsiteMetrics = () => {
 
             <div className="p-5">
                 
-                <h1 className="text-3xl font-bold">Website Stats</h1>
-                <p className="mt-3 mb-10">See useful insights and grasp your business position </p>
+                <h1 className="text-3xl font-bold">Fathership Dashboard</h1>
+                <p className="mt-3 mb-10">AI-Verified News for a Smarter World</p>
 
                 {/* blog Count, category count, report counts */}
 

@@ -11,7 +11,7 @@ import { authWithGoogle } from "../common/firebase";
 
 const UserAuthForm = ({ type }) => {
 
-    let { userAuth: { access_token }, setUserAuth } = useContext(UserContext)
+    let { userAuth: { access_token, super_admin }, setUserAuth } = useContext(UserContext)
     const [pageState, setPageState] = useState(0); // 0 - intial details like name, email, age, gender; 1 - interests; 2 - payment
     const [interests, setInterests] = useState([]);
     const [today, setToday] = useState(new Date().toISOString().split("T")[0]);
@@ -247,7 +247,7 @@ const UserAuthForm = ({ type }) => {
 
     return (
         access_token ?
-        <Navigate to="/home" />
+        super_admin ? <Navigate to={"/dashboard/super-admin/metrics"} /> : <Navigate to="/home" />
         :
         <AnimationWrapper keyValue={type}>
             <section className="h-cover flex items-center justify-center">

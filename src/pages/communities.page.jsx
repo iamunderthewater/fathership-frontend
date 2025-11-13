@@ -36,6 +36,10 @@ const Communities = () => {
             fetchJoinedCommunities()
         }
 
+        return () => {
+            setJoinedCommunities(null);
+        }
+
     }, [access_token])
 
     useEffect(() => {

@@ -9,7 +9,7 @@ const CommunityCard = ({ community, className }) => {
             <img src={image} className="w-14 h-14 rounded-full" />
 
             <div>
-                <h1 className="font-medium text-xl mb-3 line-clamp-2">{ name }</h1>
+                <h1 className="font-medium text-xl mb-3 line-clamp-1">{ name }</h1>
                 {
                     (interests && membersCount) &&
                     <div className="flex gap-2 items-center">
