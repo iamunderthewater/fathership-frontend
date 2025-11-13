@@ -105,9 +105,8 @@ const PublishForm = () => {
             return toast.error(`Write a description about your blog withing ${characterLimit} characters to publish`)
         }
 
-        // if(!tags.length){
-        //     return toast.error("Enter at least 1 tag to help us rank your blog")
-        // } 
+        const ageRange = ageRating || "all";
+        const genderSelection = targetGender || "all";
 
         // AI check
 
@@ -194,7 +193,7 @@ const PublishForm = () => {
         e.target.classList.add('disable');
 
         let blogObj = {
-            title, banner, des, content, draft: false, category: blogCategory, ageRating, targetGender
+            title, banner, des, content, draft: false, category: blogCategory, ageRating: ageRange, targetGender: genderSelection
         }
 
         axios.post(import.meta.env.VITE_SERVER_DOMAIN + "/create-blog", { ...blogObj, id: blog_id }, {

@@ -33,35 +33,42 @@ const plan_features_list = [
 // faqs is an array of objects, each object has 2 keys question and answer. when changing the faqs make sure to follow the correct syntax with correct object keys.
 
 const faqs = [
-    {
-        question: "Quesiton 1",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis orci et elit hendrerit ultricies non id massa. Ut mattis tortor nisl, sit amet eleifend mauris feugiat a. Praesent molestie sed turpis eget scelerisque. Etiam sollicitudin magna sed erat maximus placerat. Pellentesque egestas congue ex, a venenatis lacus imperdiet id. Donec condimentum nec urna eget varius. "
-    },
-    {
-        question: "Quesiton 2",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis orci et elit hendrerit ultricies non id massa. Ut mattis tortor nisl, sit amet eleifend mauris feugiat a. Praesent molestie sed turpis eget scelerisque. Etiam sollicitudin magna sed erat maximus placerat. Pellentesque egestas congue ex, a venenatis lacus imperdiet id. Donec condimentum nec urna eget varius. "
-    },
-    {
-        question: "Quesiton 3",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis orci et elit hendrerit ultricies non id massa. Ut mattis tortor nisl, sit amet eleifend mauris feugiat a. Praesent molestie sed turpis eget scelerisque. Etiam sollicitudin magna sed erat maximus placerat. Pellentesque egestas congue ex, a venenatis lacus imperdiet id. Donec condimentum nec urna eget varius. "
-    },
-    {
-        question: "Quesiton 4",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis orci et elit hendrerit ultricies non id massa. Ut mattis tortor nisl, sit amet eleifend mauris feugiat a. Praesent molestie sed turpis eget scelerisque. Etiam sollicitudin magna sed erat maximus placerat. Pellentesque egestas congue ex, a venenatis lacus imperdiet id. Donec condimentum nec urna eget varius. "
-    },
-    {
-        question: "Quesiton 5",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis orci et elit hendrerit ultricies non id massa. Ut mattis tortor nisl, sit amet eleifend mauris feugiat a. Praesent molestie sed turpis eget scelerisque. Etiam sollicitudin magna sed erat maximus placerat. Pellentesque egestas congue ex, a venenatis lacus imperdiet id. Donec condimentum nec urna eget varius. "
-    },
-    {
-        question: "Quesiton 6",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis orci et elit hendrerit ultricies non id massa. Ut mattis tortor nisl, sit amet eleifend mauris feugiat a. Praesent molestie sed turpis eget scelerisque. Etiam sollicitudin magna sed erat maximus placerat. Pellentesque egestas congue ex, a venenatis lacus imperdiet id. Donec condimentum nec urna eget varius. "
-    },
-    {
-        question: "Quesiton 7",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis orci et elit hendrerit ultricies non id massa. Ut mattis tortor nisl, sit amet eleifend mauris feugiat a. Praesent molestie sed turpis eget scelerisque. Etiam sollicitudin magna sed erat maximus placerat. Pellentesque egestas congue ex, a venenatis lacus imperdiet id. Donec condimentum nec urna eget varius. "
-    },
-]
+  {
+    question: "📰 Q1. What is Fathership News?",
+    answer:
+      "Fathership News is an AI-powered news platform where you can read, write, and share verified news. Every article goes through our AI truth verification system, ensuring the content is accurate, unbiased, and trustworthy.",
+  },
+  {
+    question: "💵 Q2. How much does the subscription cost?",
+    answer:
+      "Our subscription is just $5.00 per month — less than the price of a cup of coffee — giving you access to premium verified news and a community of real contributors.",
+  },
+  {
+    question: "🚀 Q3. What do I get with my $5 subscription?",
+    answer:
+      "Subscribers enjoy:\n• Unlimited access to verified and trending news\n• AI-validated content (no fake news!)\n• Ability to write and publish your own stories\n• Exclusive community discussions\n• Early access to upcoming features",
+  },
+  {
+    question: "🧠 Q4. How does the AI verification work?",
+    answer:
+      "Our system scans each article for factual accuracy, checks sources, and flags misinformation. Once verified, the news receives a “Trusted” badge before being published to the community.",
+  },
+  {
+    question: "🧑‍💻 Q5. Can I write my own news articles?",
+    answer:
+      "Yes! As a member, you can write your own articles, upload images, and share stories. The AI will check your submission for authenticity before it’s published.",
+  },
+  {
+    question: "📱 Q6. How do I subscribe?",
+    answer:
+      "Simply click the “Subscribe Now” button on our homepage, fill in your payment details, and you’ll gain instant access to our verified news community.",
+  },
+  {
+    question: "🔒 Q7. Is my payment and data safe?",
+    answer:
+      "Absolutely. We use secure encrypted payment gateways and follow strict data protection policies to ensure your information is safe.",
+  },
+];
 
 // review data
 

@@ -4,9 +4,13 @@ import homeSvg from "../imgs/hero.svg";
 import whySvg from "../imgs/question.svg";
 import logo from "../imgs/logo-dark.png"
 import lightLogo from "../imgs/logo-light.png"
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../App";
 
 const LandingPage = () => {
+
+    const { theme } = useContext(ThemeContext);
+
     return (
         <div className="max-w-[1800px] mx-auto">
 
@@ -15,7 +19,7 @@ const LandingPage = () => {
             <nav className="navbar z-50">
 
                 <Link to="/" className="flex-none flex items-center gap-4 w-10">
-                    <img className="w-full" src={logo} />
+                    <img className="w-full" src={theme == "dark" ? lightLogo : logo} />
                     <h1 className="text-xl max-md:hidden">{name}</h1>
                 </Link>
 
@@ -41,7 +45,7 @@ const LandingPage = () => {
             <section className="flex items-center flex-col gap-6 py-28 border-y border-purple/10">
                 <h3 className="text-center !text-4xl">Sign up</h3>
                 <p className="max-w-[450px] text-center text-xl leading-7">{sign_up_paragraph}</p>
-                <Link to={"/signup"} className="btn-dark mt-4 px-9 pb-4 bg-indigo-600">Sign Up</Link>
+                <Link to={"/signup"} className="btn-dark mt-4 px-9 pb-4 bg-indigo-600 !text-[#fff]">Sign Up</Link>
             </section>
 
             {/* why choose us, simple features options */}
@@ -76,7 +80,7 @@ const LandingPage = () => {
                 
                 <h4 className="text-3xl mb-14">At low price.</h4>
 
-                    <div className="border border-gray-200 rounded-md p-6 px-8 shadow-[-10px_-10px_0_#6b62ff] max-h-[400px] min-h-[400px] min-w-[300px] max-w-[300px]">
+                    <div className="border border-grey rounded-md p-6 px-8 shadow-[-10px_-10px_0_#6b62ff] max-h-[400px] min-h-[400px] min-w-[300px] max-w-[300px]">
 
                         <p className="text-xl mb-3">Premium Plan</p>
                         <h4 className="text-3xl font-medium">$5.00 / month</h4>
@@ -91,7 +95,7 @@ const LandingPage = () => {
                             })
                         }
 
-                        <Link to={"/signup"} className="btn-dark mt-4 px-9 pb-4 bg-indigo-600/10 hover:text-white hover:bg-indigo-600 text-indigo-600">Join Now</Link>
+                        <Link to={"/signup"} className="btn-dark mt-4 px-9 pb-4 bg-indigo-600/10 hover:text-[#fff] hover:bg-indigo-600 text-indigo-600">Join Now</Link>
                     </div>
 
                     </div>
@@ -156,7 +160,7 @@ const LandingPage = () => {
             
             {/* footer */}
 
-            <footer className="w-full py-10 px-[5vw] mt-10 bg-black text-white flex flex-col gap-6">
+            <footer className={"w-full py-10 px-[5vw] mt-10 bg-black text-white flex flex-col gap-6 " + (theme == "dark" ? " bg-gray-950 !text-[#fff] " : "")}>
 
                 <Link to="/" className="flex-none flex items-center gap-4 w-10">
                     <img className="w-full" src={lightLogo} />
@@ -204,7 +208,7 @@ const Faq = ({ item }) => {
     const [active, setActive] = useState(false);
 
     return (
-        <div className="w-full border-b border-gray-200 px-4 py-2 relative">
+        <div className="w-full border-b border-grey px-4 py-2 relative">
             <button className="text-2xl relative block w-full text-left" onClick={() => setActive(prev => !prev)}>
                 {question}
                 <span className={"absolute right-1 top-2 " + (active ? "rotate-180 top-1" : "")}><i className="fi fi-rr-angle-small-down " /></span>
