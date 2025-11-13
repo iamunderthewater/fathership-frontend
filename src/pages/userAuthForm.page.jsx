@@ -124,7 +124,7 @@ const UserAuthForm = ({ type }) => {
        if(type == "sign-up"){
             formData.interests = interests;
        }
-       console.log(formData);
+       
        if(e.stopLogin){ return true }
 
        userAuthThroughServer(serverRoute, formData)

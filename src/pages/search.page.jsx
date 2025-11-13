@@ -85,8 +85,6 @@ const SearchPage = () => {
         setCommunities(null);
     }
 
-    console.log(communities);
-
     const UserCardWrapper = () => {
         return (
             <>
@@ -151,7 +149,7 @@ const SearchPage = () => {
                                             </AnimationWrapper>
                                         );
                                     })
-                                : <NoDataMessage message="No blogs published" />
+                                : <NoDataMessage message="No articles published" />
                             )}
                             <LoadMoreDataBtn state={blogs} fetchDataFun={searchBlogs} />
                     </>

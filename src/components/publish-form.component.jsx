@@ -98,11 +98,11 @@ const PublishForm = () => {
         const blogCategory = categoryInpRef.current.value.toLowerCase();
 
         if(!title.length){
-            return toast.error("Write blog title before publishing")
+            return toast.error("Write article title before publishing")
         }
 
         if(!des.length || des.length > characterLimit){
-            return toast.error(`Write a description about your blog withing ${characterLimit} characters to publish`)
+            return toast.error(`Write a description about your article withing ${characterLimit} characters to publish`)
         }
 
         const ageRange = ageRating || "all";
@@ -110,7 +110,7 @@ const PublishForm = () => {
 
         // AI check
 
-        let aiCheckToast = toast.loading("Checking blog content using AI model...");
+        let aiCheckToast = toast.loading("Checking article content using AI model...");
 
         try {
             const res = await axios.post(import.meta.env.VITE_SERVER_DOMAIN + "/check-blog-content-before-publishing", { title, des, content: content.blocks }, {
@@ -209,7 +209,7 @@ const PublishForm = () => {
             toast.success("Published 👍");
 
             setTimeout(() => {
-                navigate("/dashboard/blogs")
+                navigate("/dashboard/articles")
             }, 500);
 
         })

@@ -74,20 +74,14 @@ const BlogEditor = () => {
         setBlog({ ...blog, title: input.value })
     }
 
-    const handleError = (e) => {
-        let img = e.target;
-
-        img.src = theme == "light" ? lightBanner : darkBanner;
-    }
-
     const handlePublishEvent = () => {
         
         if(!banner.length){
-            return toast.error("Upload a blog banner to publish it")
+            return toast.error("Upload a article banner to publish it")
         }
 
         if(!title.length){
-            return toast.error("Write blog title to publish it")
+            return toast.error("Write article title to publish it")
         }
 
         if(textEditor.isReady){
@@ -96,7 +90,7 @@ const BlogEditor = () => {
                     setBlog({ ...blog, content: data });
                     setEditorState("publish")
                 } else{
-                    return toast.error("Write something in your blog to publish it")
+                    return toast.error("Write something in your article to publish it")
                 }
             })
             .catch((err) => {
@@ -162,7 +156,7 @@ const BlogEditor = () => {
                     <img src={ theme == "light" ? darkLogo : lightLogo } />
                 </Link>
                 <p className="max-md:hidden text-black line-clamp-1 w-full">
-                    { title.length ? title : "New Blog" }
+                    { title.length ? title : "New Article" }
                 </p>
 
                 <div className="flex gap-4 ml-auto">
@@ -186,11 +180,16 @@ const BlogEditor = () => {
 
                         <div className="relative aspect-video hover:opacity-80 bg-white border-4 border-grey">
                             <label htmlFor="uploadBanner">
-                                <img 
+                                {
+                                    banner && <img 
                                     src={banner}
                                     className="z-20"
-                                    onError={handleError}
                                 />
+                                }
+                                {
+                                    !banner &&
+                                    <div className="w-full h-full bg-grey flex items-center justify-center"><p className="text-4xl opacity-30">Article Banner</p></div>
+                                }
                                 <input 
                                     id="uploadBanner"
                                     type="file"
@@ -203,7 +202,7 @@ const BlogEditor = () => {
 
                         <textarea
                             defaultValue={title}
-                            placeholder="Blog Title"
+                            placeholder="Article Title"
                             className="text-4xl font-medium w-full h-20 outline-none resize-none mt-10 leading-tight placeholder:opacity-40 bg-white"
                             onKeyDown={handleTitleKeyDown}
                             onChange={handleTitleChange}

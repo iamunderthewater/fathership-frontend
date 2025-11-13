@@ -28,3 +28,25 @@ export const getFullTime = (timestamp) => {
 
     return `${hr}:${min} ${timeNotation} ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
 }
+
+export const fillMissingDays = (data, days = 30) => { // function to fill empty days for chart
+    const today = new Date();
+    const startDate = new Date();
+    startDate.setDate(today.getDate() - (days - 1));
+
+    // Turn API data into a map for quick lookup
+    const countMap = Object.fromEntries(data.map(item => [item.date, item.count]));
+
+    const filled = [];
+    for (let i = 0; i < days; i++) {
+        const d = new Date(startDate);
+        d.setDate(startDate.getDate() + i);
+        const dateStr = d.toISOString().split("T")[0];
+        filled.push({
+            date: dateStr,
+            count: countMap[dateStr] || 0
+        });
+    }
+
+    return filled;
+}

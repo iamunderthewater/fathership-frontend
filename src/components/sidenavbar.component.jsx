@@ -64,9 +64,9 @@ const SideNav = () => {
                         <h4 className="text-xl text-dark-grey mb-3">Dashboard</h4>
                         <hr className="border-grey -ml-6 max-md:mb-2 mb-8 mr-6" />
 
-                        <NavLink to="/dashboard/blogs" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
+                        <NavLink to="/dashboard/articles" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
                             <i className="fi fi-rr-document"></i>
-                            Blogs
+                            Articles
                         </NavLink>
 
                         <NavLink to="/dashboard/notifications" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
@@ -105,6 +105,11 @@ const SideNav = () => {
                                 <NavLink to="/dashboard/super-admin/reports" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
                                     <i className="fi fi-rr-circle-x mt-1"></i>
                                     Reports
+                                </NavLink>
+
+                                <NavLink to="/dashboard/super-admin/metrics" onClick={(e) => setPageState(e.target.innerText)} className="sidebar-link">
+                                    <i className="fi fi-rr-chart-pie-alt mt-1"></i>
+                                    Metrics
                                 </NavLink>
 
                             </div>

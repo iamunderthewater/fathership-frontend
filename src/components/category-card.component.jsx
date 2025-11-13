@@ -95,7 +95,7 @@ const CategoryCard = ({ data, index, setCategories }) => {
             <div className="fixed top-0 left-0 w-full h-full bg-black/5 z-60 flex items-center justify-center" >
                 <div className="min-w-[250px] w-[90%] max-w-[350px] flex flex-col gap-8 bg-white p-5 px-8 rounded-md pb-8">
                     <h4>Edit - <span className="font-bold">{capitalize(String(categoryName).substring(0, 20))}</span></h4>
-                    <p className="p-4 bg-yellow">⚠️ Are you sure you want to change the name of this category. By doing so you will be indirectly changing the blogs owned by others. Give your desired name below to change this category name and update the blogs connected to this.</p>
+                    <p className="p-4 bg-yellow">⚠️ Are you sure you want to change the name of this category. By doing so you will be indirectly changing the articles owned by others. Give your desired name below to change this category name and update the articles connected to this.</p>
                     
                     <input ref={inpRef} type="text" name="category" placeholder="new category" className="w-full p-4 px-6 rounded-md bg-grey " />
 
@@ -120,7 +120,7 @@ const CategoryCard = ({ data, index, setCategories }) => {
                 <div className="min-w-[250px] w-[90%] max-w-[350px] flex flex-col gap-5 bg-white p-5 px-8 rounded-md pb-8">
                     <h4 className="text-2xl">Are you sure ?</h4>
                     {/* <p>Delete - <span className="font-bold">{capitalize(String(categoryName).substring(0, 20))}</span></p> */}
-                    <p className="p-4 bg-red/20"> Are you sure you want to delete {categoryName}. By doing so all the blogs related to this category and user activities with that blog will also be deleted</p>
+                    <p className="p-4 bg-red/20"> Are you sure you want to delete {categoryName}. By doing so all the articles related to this category and user activities with that articles will also be deleted</p>
 
                     <div className="flex flex-wrap gap-3 justify-end">
                         {
@@ -143,7 +143,7 @@ const CategoryCard = ({ data, index, setCategories }) => {
                     <p className="text-xl font-medium max-w-[85%] line-clamp-1">{capitalize(categoryName)}</p>
                     <button className="ml-auto underline" onClick={() => setEditWindow(true)}>Edit</button>
                 </div>
-                <p className=" whitespace-nowrap">Blogs - {blog_count}</p>
+                <p className=" whitespace-nowrap">Articles - {blog_count}</p>
             </div>
         </div>
         </>

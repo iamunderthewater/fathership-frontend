@@ -14,7 +14,7 @@ import CommunityCard from "../components/communitycard.component";
 
 const HomePage = () => {
     
-    let { userAuth, userAuth: { birthdate, gender } } = useContext(UserContext);
+    let { userAuth, userAuth: { birthdate, gender, interests } } = useContext(UserContext);
     
     let [blogs, setBlog] = useState(null);
     let [trendingBlogs, setTrendingBlog] = useState(null);
@@ -25,24 +25,24 @@ const HomePage = () => {
     const fetchLatestBlogs = ({ page = 1 }) => {
         
         axios
-            .post(import.meta.env.VITE_SERVER_DOMAIN + "/latest-blogs", { page, birthdate, gender })
+            .post(import.meta.env.VITE_SERVER_DOMAIN + "/latest-blogs", { page, birthdate, gender, interests })
             .then( async ({ data }) => {
 
                 let formatedData = await filterPaginationData({
                     state: blogs,
                     data: data.blogs,
                     page,
-                    data_to_send: {birthdate, gender},
+                    data_to_send: {birthdate, gender, interests},
                     countRoute: "/all-latest-blogs-count"
                 })
-
+                
                 setBlog(formatedData);
             })
             .catch((err) => {
                 console.log(err);
             });
     };
-
+    
     const fetchBlogsByCategory = ({ page = 1 }) => {
         axios
             .post(import.meta.env.VITE_SERVER_DOMAIN + "/search-blogs", { category: pageState, page })
@@ -55,7 +55,7 @@ const HomePage = () => {
                     countRoute: "/search-blogs-count",
                     data_to_send: { category: pageState._id }
                 })
-
+                
                 setBlog(formatedData);
             })
             .catch((err) => {
@@ -150,8 +150,8 @@ const HomePage = () => {
                 {/* latest blogs */}
                 <div className="w-full">
                     <InPageNavigation
-                        routes={[ pageState.name , "communities", "trending blogs" ]}
-                        defaultHidden={["trending blogs"]}
+                        routes={[ pageState.name , "communities", "trending articles" ]}
+                        defaultHidden={["trending articles"]}
                     >
                         <>
                             {blogs == null ? (
@@ -176,9 +176,9 @@ const HomePage = () => {
                                             </AnimationWrapper>
                                         );
                                     })
-                                : <NoDataMessage message="No blogs published" />
+                                : <NoDataMessage message="No articles published" />
                             )}
-                            <LoadMoreDataBtn state={blogs} fetchDataFun={( pageState == "home" ? fetchLatestBlogs : fetchBlogsByCategory )} />
+                            <LoadMoreDataBtn state={blogs} fetchDataFun={( pageState.name == "home" ? fetchLatestBlogs : fetchBlogsByCategory )} />
                         </>
 
                         <>
@@ -236,7 +236,7 @@ const HomePage = () => {
                     <div className="flex flex-col gap-10">
                         <div>
                             <h1 className="font-medium text-xl mb-8">
-                                Stories form all interests
+                                Stories from all interests
                             </h1>
 
                             <div className="flex gap-3 flex-wrap">
@@ -277,7 +277,7 @@ const HomePage = () => {
                                             </AnimationWrapper>
                                         );
                                     })
-                                : <NoDataMessage message="No trending blogs" />
+                                : <NoDataMessage message="No trending articles" />
                             )}
                         </div>
                     </div>

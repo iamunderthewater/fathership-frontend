@@ -104,7 +104,7 @@ const ManageBlogs = () => {
                 <input 
                     type="search"
                     className="w-full bg-grey p-4 pl-12 pr-6 rounded-full placeholder:text-dark-grey"
-                    placeholder="Search Blogs"
+                    placeholder="Search Articles"
                     onChange={handleChange}
                     onKeyDown={handleSearch}
                 />
@@ -112,7 +112,7 @@ const ManageBlogs = () => {
                 <i className="fi fi-rr-search absolute right-[10%] md:pointer-events-none md:left-5 top-1/2 -translate-y-1/2 text-xl text-dark-grey "></i>
             </div>
 
-            <InPageNavigation routes={["Published Blogs", "Drafts"]} defaultActiveIndex={ activeTab != 'draft' ? 0 : 1 }>
+            <InPageNavigation routes={["Published Articles", "Drafts"]} defaultActiveIndex={ activeTab != 'draft' ? 0 : 1 }>
 
                 { // published Blogs
 
@@ -134,7 +134,7 @@ const ManageBlogs = () => {
 
                        </>
 
-                    : <NoDataMessage message="No published blogs" />
+                    : <NoDataMessage message="No published articles" />
 
                 }
 
@@ -158,7 +158,7 @@ const ManageBlogs = () => {
                         <LoadMoreDataBtn state={drafts} fetchDataFun={getBlogs} additionalParam={{ draft: true, deletedDocCount: drafts.deletedDocCount }} />
                     </>
 
-                    : <NoDataMessage message="No draft blogs" />
+                    : <NoDataMessage message="No draft articles" />
 
                 }
 

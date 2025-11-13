@@ -23,6 +23,7 @@ import Communities from "./pages/communities.page";
 import CreateCommunityForm from "./pages/create-community.page";
 import CommunityPage from "./pages/communityPage.page";
 import ProtectedRoute from "./components/protectedRoute.component";
+import WebsiteMetrics from "./pages/super-admin/metrics.page";
 
 export const UserContext = createContext({})
 
@@ -96,13 +97,14 @@ const App = () => {
                     <Route path="create-community" element={<CreateCommunityForm />} />
                     <Route path="dashboard" element={<SideNav />}>
                         <Route index element={<PageNotFound />} />
-                        <Route path="blogs" element={<ManageBlogs />} />
+                        <Route path="articles" element={<ManageBlogs />} />
                         <Route path="notifications" element={<Notifications />} />
                         <Route path="super-admin">
-                        <Route index element={<PageNotFound />} />
-                        <Route path="categories" element={<CategoriesManagement />} />
-                        <Route path="activities" element={<ActivitiesLog />} />
-                        <Route path="reports" element={<ManageReports />} />
+                            <Route index element={<PageNotFound />} />
+                            <Route path="categories" element={<CategoriesManagement />} />
+                            <Route path="activities" element={<ActivitiesLog />} />
+                            <Route path="reports" element={<ManageReports />} />
+                            <Route path="metrics" element={<WebsiteMetrics />} />
                         </Route>
                     </Route>
                     <Route path="settings" element={<SideNav />}>
@@ -112,7 +114,7 @@ const App = () => {
                     </Route>
                     <Route path="search/:query" element={<SearchPage />} />
                     <Route path="user/:id" element={<ProfilePage />} />
-                    <Route path="blog/:blog_id" element={<BlogPage />} />
+                    <Route path="article/:blog_id" element={<BlogPage />} />
                     </Route>
                 </Route>
                 </Routes>

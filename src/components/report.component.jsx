@@ -74,8 +74,8 @@ const ReportComponent = ({ _id, username, type }) => {
                 reportWindow &&
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-white/80 z-50">
                     <div className="rounded-md p-7 bg-white max-w-[400px] w-[90%] min-w-[200px] border border-grey shadow-md">
-                        <p className="text-xl font-bold">Report {type} ?</p>
-                        <p className="my-4">Please provide a reason you want to report this {type}</p>
+                        <p className="text-xl font-bold">Report {type == "blog" ? "article" : type} ?</p>
+                        <p className="my-4">Please provide a reason you want to report this {type == "blog" ? "article" : type}</p>
                         {
                             preDefinedReportreasons.map((r, i) => {
                                 return (
@@ -108,7 +108,7 @@ const ReportComponent = ({ _id, username, type }) => {
                 </div>
             }
 
-            <button className="py-2 underline text-black inline w-fit hover:text-purple" onClick={() => setReportWindow(true)}>Report {type}</button>
+            <button className="py-2 underline text-black inline w-fit hover:text-purple" onClick={() => setReportWindow(true)}>Report {type == "blog" ? "article" : type}</button>
         </>
     )
 }
